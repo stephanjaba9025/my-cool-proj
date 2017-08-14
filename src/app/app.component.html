@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<p>Data will send to child controller</p>
+<input type="text" [(ngModel)]="fname">
+<p>This will be the data from child:{{child}}</p>
+DATA FETCH USING SERVICES
+<ul *ngFor="let emp of EmployeeA.records; let i=index">
+  <li>{{i}} {{emp.Name}}--{{emp.City}}--{{emp.Country}}</li>
+</ul>
+<app-employeelist (childEmit)="child=$event" [parentData]="fname"></app-employeelist>
